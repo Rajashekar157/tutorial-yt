@@ -1,0 +1,3 @@
+torch==1.12.1  # Change the version based on your environment
+torchvision==0.13.1  # Change the version based on your environment
+Pillow==9.0.1  # For image processing

@@ -1,0 +1,28 @@
+import requests
+import json
+
+# Your Replicate API token
+API_TOKEN = 'yr8_fOhwRu0Z10BuHl6jOoYpEmuz1WFRVwk3lvAbK'
+
+# Your model definition
+model_definition = {
+    "description": "My model description",
+    "entrypoint": "save_model.py",
+    "requirements": ["torch", "torchvision", "Pillow"]
+}
+
+# Push the model
+response = requests.post(
+    'https://api.replicate.com/v1/models',
+    headers={
+        'Authorization': f'Token {API_TOKEN}',
+        'Content-Type': 'application/json'
+    },
+    data=json.dumps(model_definition)
+)
+
+
+if response.status_code == 201:
+    print("Model pushed successfully:", response.json())
+else:
+    print("Failed to push model:", response.status_code, response.text)

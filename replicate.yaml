@@ -1,0 +1,9 @@
+version: "1.0"
+name: "save_model.py"
+description: "A brief description of your model."
+input:
+  - name: "input_name"
+    type: "string"  
+output:
+  - name: "output_name"
+    type: "string"  
